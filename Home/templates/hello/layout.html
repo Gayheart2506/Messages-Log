@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'hello/layout.css' %}">
     {% block head %} {% endblock head %}
 </head>
 <body>
-
-    {% block body %}
-    {% endblock body %}
-
+    <div class="navbar">
+        <a href="{% url 'index' %}" class="nav-home">Home</a>
+        <a href="{% url 'about' %}" class="nav-item">About</a>
+        <a href="{% url 'contact' %}" class="nav-item">Contact</a>
+    </div>
+    <div class="body-content">
+        {% block body %}
+        {% endblock body %}
+        <hr>
+        <footer>
+            <p>&copy; 2023</p>
+        </footer>
+    </div>
+    
 </body>
 </html>
