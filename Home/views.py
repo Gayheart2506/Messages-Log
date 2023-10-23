@@ -5,10 +5,16 @@ from django.utils.timezone import datetime
 # Create your views here.
 
 def home(request):
-    return HttpResponse("Hello Django, this is my website")
+    return render(request, "hello/home.html")
 
 def hello(request, name):
     return render(request, "hello/index.html", {
         "name": name, 
         "date": datetime.now()
     })
+
+def about_page(request):
+    return render(request, "hello/about.html")
+
+def contact_page(request):
+    return render(request, "hello/contact.html")
